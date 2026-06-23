@@ -95,9 +95,31 @@ button{
 
 <h1>Acionamento de Guincho - Getrak</h1>
 
-<div class="grid">
+<div class="grid"> 
+<div> <label>Tipo</label> <input type="text" id="tipo" value="Veículo"> </div> 
+    
+<div> <label>Cliente</label> <input type="text" id="cliente" value="Getrak"> </div> 
+    
+<div> <label>Produto</label> <input type="text" id="produto" value="Assistência Veicular"> </div> 
+<div> <label>Plano</label> <select id="plano"> <option></option> 
+<option>Recuperação de veículo leve - furto, roubo ou apropriação indébita</option> 
+<option>Recuperação de veículo utilitário - furto, roubo ou apropriação indébita</option> 
+</select> </div> <div> <label>CNPJ</label> 
+<input type="text" id="cnpj" value="Getrak - 06.349.959/0001-13"> </div> 
+<div> <label>Nome</label> <input type="text" id="nome" value="Gisele Pereira"> </div> 
+<div> <label>Renavam</label> 
+<input type="text" id="renavam" value="Não obrigatório"> </div> 
+<div> <label>Placa</label> <input type="text" id="placa"> </div> 
+<div> <label>Ano Fabricação</label> <input type="text" id="anoFabricacao"> </div> 
+<div> <label>Ano Modelo</label> <input type="text" id="anoModelo"> </div> 
+<div> <label>Marca</label> <input type="text" id="marca"> </div> 
+<div> <label>Modelo</label> <input type="text" id="modelo"> </div> 
+<div> <label>Câmbio</label> <select id="cambio"> <option></option> 
+<option>Manual</option> <option>Automático</option> 
+</select> 
+</div>
 
-```html
+
 <div>
 <label>Fato Gerador</label>
 <input type="text" id="fatoGerador" value="Recuperação de veículo">
@@ -212,8 +234,6 @@ button{
 <label>Contato do responsável no local</label>
 <input type="text" id="contato">
 </div>
-```
-
 
 </div>
 
