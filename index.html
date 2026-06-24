@@ -1,343 +1,144 @@
-Guincho
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Acionamento de Guincho - Getrak</title>
-
 <style>
-body{
-    font-family: Arial, sans-serif;
-    background:#f4f4f4;
-    margin:0;
-    padding:20px;
-}
-
-.container{
-    max-width:1000px;
-    margin:auto;
-    background:#fff;
-    padding:25px;
-    border-radius:10px;
-    box-shadow:0 0 10px rgba(0,0,0,.1);
-}
-
-h1{
-    text-align:center;
-    color:#1f2937;
-    margin-bottom:20px;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:15px;
-}
-
-label{
-    font-weight:bold;
-    display:block;
-    margin-bottom:5px;
-}
-
-input, select, textarea{
-    width:100%;
-    padding:10px;
-    border:1px solid #ccc;
-    border-radius:6px;
-    box-sizing:border-box;
-}
-
-textarea{
-    min-height:350px;
-    margin-top:15px;
-}
-
-.botoes{
-    margin-top:20px;
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-}
-
-button{
-    border:none;
-    padding:12px 20px;
-    border-radius:6px;
-    cursor:pointer;
-    font-weight:bold;
-}
-
-.gerar{
-    background:#2563eb;
-    color:white;
-}
-
-.copiar{
-    background:#16a34a;
-    color:white;
-}
-
-.whatsapp{
-    background:#25D366;
-    color:white;
-}
-
-.oculto{
-    display:none;
-}
+body{font-family:Segoe UI,Arial,sans-serif;background:#f3f6fb;margin:0}
+.header{background:#123a6d;color:#fff;padding:20px;text-align:center}
+.container{max-width:1200px;margin:20px auto;padding:0 15px}
+.card{background:#fff;border-radius:12px;padding:18px;margin-bottom:18px;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.card h2{margin-top:0;color:#123a6d}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+label{font-weight:600;display:block;margin-bottom:4px}
+input,select,textarea{width:100%;padding:10px;border:1px solid #ccc;border-radius:8px;box-sizing:border-box}
+textarea{min-height:280px}
+.buttons{display:flex;gap:10px;flex-wrap:wrap}
+button{border:none;padding:12px 18px;border-radius:8px;cursor:pointer;color:#fff;font-weight:bold}
+.gen{background:#2563eb}.copy{background:#16a34a}.mail{background:#ea580c}
+.hidden{display:none}
 </style>
 </head>
 <body>
-
+<div class="header"><h1>Acionamento de Guincho - Getrak</h1></div>
 <div class="container">
 
-<h1>Acionamento de Guincho - Getrak</h1>
+<div class="card"><h2>Dados da Solicitação</h2>
+<div class="grid">
+<div><label>Tipo</label><input id="tipo" value="Veículo"></div>
+<div><label>Cliente</label><input id="cliente" value="Getrak"></div>
+<div><label>Produto</label><input id="produto" value="Assistência Veicular"></div>
+<div><label>Plano</label><select id="plano"><option>Recuperação de veículo leve - furto, roubo ou apropriação indébita</option><option>Recuperação de veículo utilitário - furto, roubo ou apropriação indébita</option></select></div>
+<div><label>CNPJ</label><input id="cnpj" value="Getrak - 06.349.959/0001-13"></div>
+</div></div>
 
-<div class="grid"> 
-<div> <label>Tipo</label> <input type="text" id="tipo" value="Veículo"> </div> 
-    
-<div> <label>Cliente</label> <input type="text" id="cliente" value="Getrak"> </div> 
-    
-<div> <label>Produto</label> <input type="text" id="produto" value="Assistência Veicular"> </div> 
-    <div>
-<label>Plano</label>
-<select id="plano"><option>Recuperação de veículo leve - furto, roubo ou apropriação indébita</option><option>Recuperação de veículo utilitário - furto, roubo ou apropriação indébita</option>
-</select>
-</div>
-<div> <label>CNPJ</label> 
-<input type="text" id="cnpj" value="Getrak - 06.349.959/0001-13"> </div> 
-<div> <label>Nome</label> <input type="text" id="nome" value="Gisele Pereira"> </div> 
-<div> <label>Renavam</label> 
-<input type="text" id="renavam" value="Não obrigatório"> </div> 
-<div> <label>Placa</label> <input type="text" id="placa"> </div> 
-<div> <label>Ano Fabricação</label> <input type="text" id="anoFabricacao"> </div> 
-<div> <label>Ano Modelo</label> <input type="text" id="anoModelo"> </div> 
-<div> <label>Marca</label> <input type="text" id="marca"> </div> 
-<div> <label>Modelo</label> <input type="text" id="modelo"> </div> 
-<div> <label>Câmbio</label> <select id="cambio"> 
-<option>Automático</option> <option>Manual</option> 
-</select> 
-</div>
+<div class="card"><h2>Dados do Veículo</h2><div class="grid">
+<div><label>Nome</label><input id="nome"></div>
+<div><label>Placa</label><input id="placa"></div>
+<div><label>Marca</label><input id="marca"></div>
+<div><label>Modelo</label><input id="modelo"></div>
+<div><label>Ano Fabricação</label><input id="anoFab"></div>
+<div><label>Ano Modelo</label><input id="anoMod"></div>
+<div><label>Câmbio</label><select id="cambio"><option>Manual</option><option>Automático</option></select></div>
+<div><label>Tipo Veículo</label><select id="tipoVeiculo"><option>Automóvel</option><option>Motocicleta</option><option>Caminhão</option><option>Pick-up</option><option>Van</option><option>Ônibus</option></select></div>
+<div><label>Renavam</label><input id="renavam" value="Não obrigatório"></div>
+</div></div>
 
+<div class="card"><h2>Endereços</h2><div class="grid">
+<div><label>Origem</label><input id="origem"></div>
+<div><label>Destino</label><input id="destino"></div>
+<div><label>Destino Final</label><input id="destinoFinal"></div>
+</div></div>
 
-<div>
-<label>Fato Gerador</label>
-<input type="text" id="fatoGerador" value="Recuperação de veículo">
-</div>
+<div class="card"><h2>Questionário Obrigatório</h2><div class="grid">
+<div><label>Fato Gerador</label><input id="fato" value="Recuperação de veículo"></div>
+<div><label>Tipo de Serviço</label><select id="servico"><option selected>Reboque</option><option>Carga de bateria</option><option>Abertura de portas</option></select></div>
+<div><label>Veículo aberto?</label><select id="aberto"><option selected>Sim</option><option>Não</option><option>Não sabe</option></select></div>
+<div><label>Chave no local?</label><select id="chave"><option selected>Sim</option><option>Não</option><option>Não sabe</option></select></div>
+<div><label>Documento no local?</label><select id="documento"><option selected>Não</option><option>Sim</option><option>Não sabe</option></select></div>
+<div><label>Local</label><select id="local"><option selected>Via pública</option><option>Garagem coberta</option><option>Garagem descoberta</option><option>Garagem subsolo</option></select></div>
+<div><label>Carregado?</label><select id="carregado"><option selected>Não</option><option>Sim</option><option>Não sabe</option></select></div>
+<div><label>Rebaixado?</label><select id="rebaixado"><option selected>Não</option><option>Sim</option><option>Não sabe</option></select></div>
+<div><label>BO presencial?</label><select id="bo"><option selected>Não</option><option>Sim</option><option>Não sabe</option></select></div>
+<div><label>Liberado?</label><select id="liberado"><option selected>Sim</option><option>Não</option><option>Não sabe</option></select></div>
+<div><label>Acompanhar reboque?</label><select id="acompanhar"><option selected>Não</option><option>Sim</option><option>Não sabe</option></select></div>
+<div><label>Rodas livres?</label><select id="rodas" onchange="toggleRodas()"><option selected>Não</option><option>Sim</option><option>Não sabe</option></select></div>
+<div id="rodasDiv"><label>Qtd. rodas travadas</label><input id="rodasTravadas"></div>
+</div></div>
 
-<div>
-<label>Tipo de Serviço</label>
-<select id="tipoServico">
-    <option>Reboque</option>
-    <option>Carga de bateria</option>
-    <option>Abertura de portas</option>
-</select>
-</div>
+<div class="card"><h2>Contato</h2><label>Responsável no local</label><input id="contato"></div>
 
-<div>
-<label>O veículo está aberto?</label>
-<select id="aberto">
-    <option>Sim</option>
-    <option>Não</option>
-    <option>Não sabe</option>
-</select>
-</div>
-
-<div>
-<label>A chave do veículo está no local?</label>
-<select id="chave">
-    <option>Sim</option>
-    <option>Não</option>
-    <option>Não sabe</option>
-</select>
-</div>
-
-<div>
-<label>O documento do veículo está no local?</label>
-<select id="documento">
-    <option>Não</option>
-    <option>Sim</option>
-    <option>Não sabe</option>
-</select>
-</div>
-
-<div>
-<label>O veículo está em via pública ou garagem?</label>
-<select id="local">
-    <option>Via pública</option>
-    <option>Garagem coberta</option>
-    <option>Garagem descoberta</option>
-    <option>Garagem subsolo</option>
-</select>
-</div>
-
-<div>
-<label>O carro está carregado?</label>
-<select id="carregado">
-    <option>Não</option>
-    <option>Sim</option>
-    <option>Não sabe</option>
-</select>
-</div>
-
-<div>
-<label>O veículo é rebaixado?</label>
-<select id="rebaixado">
-    <option>Não</option>
-    <option>Sim</option>
-    <option>Não sabe</option>
-</select>
-</div>
-
-<div>
-<label>Foi acionado as autoridades através do 190 e realizado boletim de ocorrência presencial?</label>
-<select id="bo">
-    <option>Não</option>
-    <option>Sim</option>
-    <option>Não sabe</option>
-</select>
-</div>
-
-<div>
-<label>O veículo está liberado pelas autoridades competentes?</label>
-<select id="liberado">
-    <option>Sim</option>
-    <option>Não</option>
-    <option>Não sabe</option>
-</select>
-</div>
-
-<div>
-<label>O senhor irá acompanhar o reboque até o destino?</label>
-<select id="acompanhar">
-    <option>Não</option>
-    <option>Sim</option>
-    <option>Não sabe</option>
-</select>
-</div>
-
-<div>
-<label>As rodas do veículo estão livres e destravadas?</label>
-<select id="rodas" onchange="controlarRodas()">
-    <option>Sim</option>
-    <option>Não</option>
-    <option>Não sabe</option>
-</select>
-</div>
-
-<div id="divRodasTravadas">
-<label>Caso a resposta for não, quantas rodas travadas?</label>
-<input type="text" id="rodasTravadas">
-</div>
-
-<div>
-<label>Contato do responsável no local</label>
-<input type="text" id="contato">
-</div>
-
-</div>
-
-<div class="botoes">
-<button type="button" class="gerar" onclick="gerarTexto()">Gerar Solicitação</button>
-<button type="button" class="copiar" onclick="copiarTexto()">Copiar</button>
-<button type="button" class="whatsapp" onclick="enviarWhatsapp()">WhatsApp</button>
-</div>
-
+<div class="card">
+<h2>Solicitação Gerada</h2>
+<div class="buttons">
+<button class="gen" onclick="gerarTexto()">Gerar Solicitação</button>
+<button class="copy" onclick="copiarTexto()">Copiar Texto</button>
+<button class="mail" onclick="enviarEmail()">Enviar E-mail</button>
+</div><br>
 <textarea id="resultado"></textarea>
+</div>
 
 </div>
 
 <script>
-
-function controlarRodas(){
-    const rodas = document.getElementById("rodas").value;
-
-    if(rodas === "Não"){
-        document.getElementById("divRodasTravadas").classList.remove("oculto");
-    }else{
-        document.getElementById("divRodasTravadas").classList.add("oculto");
-    }
+function v(id){return document.getElementById(id).value;}
+function toggleRodas(){
+ document.getElementById('rodasDiv').style.display=(v('rodas')==='Não')?'block':'none';
 }
-
-function valor(id){
-    return document.getElementById(id).value;
-}
-
 function gerarTexto(){
+const t=`*ACIONAMENTO DE GUINCHO - GETRAK*
 
-let texto =
-`*ACIONAMENTO DE GUINCHO - GETRAK*
+*Tipo:* ${v('tipo')}
+*Cliente:* ${v('cliente')}
+*Produto:* ${v('produto')}
+*Plano:* ${v('plano')}
+*CNPJ:* ${v('cnpj')}
 
-*Tipo:* ${valor('tipo')}
-*Cliente:* ${valor('cliente')}
-*Produto:* ${valor('produto')}
-*Plano:* ${valor('plano')}
-*CNPJ:* ${valor('cnpj')}
+*Nome:* ${v('nome')}
+*Renavam:* ${v('renavam')}
+*Placa:* ${v('placa')}
+*Ano Fabricação:* ${v('anoFab')}
+*Ano Modelo:* ${v('anoMod')}
+*Marca:* ${v('marca')}
+*Modelo:* ${v('modelo')}
+*Câmbio:* ${v('cambio')}
+*Tipo de Veículo:* ${v('tipoVeiculo')}
 
-*Nome:* ${valor('nome')}
-*Renavam:* ${valor('renavam')}
-*Placa:* ${valor('placa')}
-*Ano Fabricação:* ${valor('anoFabricacao')}
-*Ano Modelo:* ${valor('anoModelo')}
-*Marca:* ${valor('marca')}
-*Modelo:* ${valor('modelo')}
-*Câmbio:* ${valor('cambio')}
-*Tipo de Veículo:* ${valor('tipoVeiculo')}
+*Endereço Origem:* ${v('origem')}
+*Endereço Destino:* ${v('destino')}
+*Endereço Destino Final:* ${v('destinoFinal')}
 
-*Endereço Origem:* ${valor('origem')}
-*Endereço Destino:* ${valor('destino')}
-*Endereço Destino Final:* ${valor('destinoFinal')}
+*Fato Gerador:* ${v('fato')}
+*Tipo de Serviço:* ${v('servico')}
+*O veículo está aberto?* ${v('aberto')}
+*A chave está no local?* ${v('chave')}
+*Documento no local?* ${v('documento')}
+*Local:* ${v('local')}
+*Carregado?* ${v('carregado')}
+*Rebaixado?* ${v('rebaixado')}
+*BO presencial?* ${v('bo')}
+*Liberado?* ${v('liberado')}
+*Acompanhar reboque?* ${v('acompanhar')}
+*Rodas livres?* ${v('rodas')}
+*Rodas travadas:* ${v('rodasTravadas')}
 
-*Questionário Obrigatório*
-
-*Fato Gerador:* ${valor('fatoGerador')}
-*Tipo de Serviço:* ${valor('tipoServico')}
-*O veículo está aberto?* ${valor('aberto')}
-*A chave do veículo está no local?* ${valor('chave')}
-*O documento do veículo está no local?* ${valor('documento')}
-*O veículo está em via pública ou garagem?* ${valor('local')}
-*O carro está carregado?* ${valor('carregado')}
-*O veículo é rebaixado?* ${valor('rebaixado')}
-*Foi acionado o 190 e realizado BO presencial?* ${valor('bo')}
-*O veículo está liberado pelas autoridades?* ${valor('liberado')}
-*O senhor irá acompanhar o reboque?* ${valor('acompanhar')}
-*As rodas do veículo estão livres e destravadas?* ${valor('rodas')}
-*Quantidade de rodas travadas:* ${valor('rodasTravadas')}
-*Contato do responsável no local:* ${valor('contato')}`;
-
-document.getElementById("resultado").value = texto;
-
+*Contato do responsável:* ${v('contato')}`;
+document.getElementById('resultado').value=t;
 }
-
 function copiarTexto(){
-    const texto = document.getElementById("resultado").value;
-
-    if(!texto){
-        alert("Gere a solicitação primeiro.");
-        return;
-    }
-
-    navigator.clipboard.writeText(texto);
-    alert("Texto copiado!");
+gerarTexto();
+navigator.clipboard.writeText(document.getElementById('resultado').value);
+alert('Texto copiado!');
 }
-
-function enviarWhatsapp(){
-    const texto = document.getElementById("resultado").value;
-
-    if(!texto){
-        alert("Gere a solicitação primeiro.");
-        return;
-    }
-
-    window.open(
-        "https://wa.me/?text=" + encodeURIComponent(texto),
-        "_blank"
-    );
+function enviarEmail(){
+gerarTexto();
+const placa=v('placa')||'SEM_PLACA';
+const assunto='Solicitação de placa: '+placa;
+const corpo=document.getElementById('resultado').value;
+location.href='mailto:assistencia@grupoassistme.com.br,monitoramento.sc@getrak.com.br?subject='+encodeURIComponent(assunto)+'&body='+encodeURIComponent(corpo);
 }
-
+toggleRodas();
 </script>
-
 </body>
 </html>
