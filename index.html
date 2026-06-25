@@ -89,43 +89,43 @@ function toggleRodas(){
  document.getElementById('rodasDiv').style.display=(v('rodas')==='Não')?'block':'none';
 }
 function gerarTexto(){
-const t=`*ACIONAMENTO DE GUINCHO - GETRAK*
+const t=`ACIONAMENTO DE GUINCHO - GETRAK
 
-*Tipo:* ${v('tipo')}
-*Cliente:* ${v('cliente')}
-*Produto:* ${v('produto')}
-*Plano:* ${v('plano')}
-*CNPJ:* ${v('cnpj')}
+Tipo: ${v('tipo')}
+Cliente: ${v('cliente')}
+Produto: ${v('produto')}
+Plano: ${v('plano')}
+CNPJ: ${v('cnpj')}
 
-*Nome:* ${v('nome')}
-*Renavam:* ${v('renavam')}
-*Placa:* ${v('placa')}
-*Ano Fabricação:* ${v('anoFab')}
-*Ano Modelo:* ${v('anoMod')}
-*Marca:* ${v('marca')}
-*Modelo:* ${v('modelo')}
-*Câmbio:* ${v('cambio')}
-*Tipo de Veículo:* ${v('tipoVeiculo')}
+Nome: ${v('nome')}
+Renavam: ${v('renavam')}
+Placa: ${v('placa')}
+Ano Fabricação: ${v('anoFab')}
+Ano Modelo: ${v('anoMod')}
+Marca: ${v('marca')}
+Modelo: ${v('modelo')}
+Câmbio: ${v('cambio')}
+Tipo de Veículo: ${v('tipoVeiculo')}
 
-*Endereço Origem:* ${v('origem')}
-*Endereço Destino:* ${v('destino')}
-*Endereço Destino Final:* ${v('destinoFinal')}
+Endereço Origem: ${v('origem')}
+Endereço Destino: ${v('destino')}
+Endereço Destino Final: ${v('destinoFinal')}
 
-*Fato Gerador:* ${v('fato')}
-*Tipo de Serviço:* ${v('servico')}
-*O veículo está aberto?* ${v('aberto')}
-*A chave está no local?* ${v('chave')}
-*Documento no local?* ${v('documento')}
-*Local:* ${v('local')}
-*Carregado?* ${v('carregado')}
-*Rebaixado?* ${v('rebaixado')}
-*BO presencial?* ${v('bo')}
-*Liberado?* ${v('liberado')}
-*Acompanhar reboque?* ${v('acompanhar')}
-*Rodas livres?* ${v('rodas')}
-*Rodas travadas:* ${v('rodasTravadas')}
+Fato Gerador: ${v('fato')}
+Tipo de Serviço: ${v('servico')}
+O veículo está aberto? ${v('aberto')}
+A chave está no local? ${v('chave')}
+Documento no local? ${v('documento')}
+Local: ${v('local')}
+Carregado? ${v('carregado')}
+Rebaixado? ${v('rebaixado')}
+BO presencial? ${v('bo')}
+Liberado? ${v('liberado')}
+Acompanhar reboque? ${v('acompanhar')}
+Rodas livres? ${v('rodas')}
+Rodas travadas: ${v('rodasTravadas')}
 
-*Contato do responsável:* ${v('contato')}`;
+Contato do responsável: ${v('contato')}`;
 document.getElementById('resultado').value=t;
 }
 function copiarTexto(){
